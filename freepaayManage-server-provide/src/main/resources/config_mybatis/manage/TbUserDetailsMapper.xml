@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.freepaay.manage.mapper.TbUserDetailsMapper" >
+  <resultMap id="BaseResultMap" type="com.freepaay.manage.bean.TbUserDetails" >
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="USER_DETAILS_KEY" property="userDetailsKey" jdbcType="DECIMAL" />
+    <result column="USER_KEY" property="userKey" jdbcType="DECIMAL" />
+    <result column="USER_CHINESE_NAME" property="userChineseName" jdbcType="VARCHAR" />
+    <result column="USER_MOBILE" property="userMobile" jdbcType="VARCHAR" />
+    <result column="USER_COUNTRY" property="userCountry" jdbcType="VARCHAR" />
+    <result column="USER_PROVINCE" property="userProvince" jdbcType="VARCHAR" />
+    <result column="USER_CITY" property="userCity" jdbcType="VARCHAR" />
+    <result column="USER_ADDRESS" property="userAddress" jdbcType="VARCHAR" />
+    <result column="USER_QQ" property="userQq" jdbcType="VARCHAR" />
+    <result column="USER_WEIXIN" property="userWeixin" jdbcType="VARCHAR" />
+    <result column="LAST_ACCESS_TIME" property="lastAccessTime" jdbcType="TIMESTAMP" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+</mapper>

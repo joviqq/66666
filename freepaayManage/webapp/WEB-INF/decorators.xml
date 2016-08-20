@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/layouts/">
+	<!-- 不需要过滤的请求 -->
+	<excludes>
+		<pattern>/resources/*</pattern>
+		<pattern>/ui/*</pattern>
+	</excludes>
+	
+	<!-- 定义装饰器要过滤的页面 -->
+	<decorator name="default" page="default.jsp">
+		<pattern>/*</pattern>
+	</decorator>
+</decorators>

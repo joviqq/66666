@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxool-config>
+	<proxool>
+		<alias>freepaayZoo</alias>
+		<!-- <driver-url>jdbc:oracle:thin:@10.0.1.177:1521:shdgdb</driver-url> -->
+		<!-- ?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull -->
+		<driver-url>jdbc:mysql://192.168.99.226:3306/freepaay</driver-url>
+		<driver-class>com.mysql.jdbc.Driver</driver-class>
+		<driver-properties>
+			<property name="user" value="freepaay" />
+			<property name="password" value="freepaay" />
+		</driver-properties>
+		<house-keeping-sleep-time>90000</house-keeping-sleep-time>
+		<maximum-connection-count>100</maximum-connection-count>
+		<minimum-connection-count>10</minimum-connection-count>
+		<prototype-count>5</prototype-count>
+		<simultaneous-build-throttle>20</simultaneous-build-throttle>
+		<statistics>15s,10m,1d</statistics>
+		<statistics-log-level>INFO</statistics-log-level>
+		<house-keeping-test-sql>select 1</house-keeping-test-sql>
+	</proxool>
+</proxool-config>

@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* CSS Document */
+.goods_title h1{padding-left:40px;text-align:center; color:#000;font:bold 13px/30px "Microsoft YaHei","微软雅黑"; display:inline-block; float:left;}
+.goods_title .time{ float:right; color:#000;font:12px/30px "Microsoft YaHei","微软雅黑"; padding-right:10px;}
+.goods_title .time font{color:#f00;}
+.goods_title1 h1{padding-left:40px;text-align:center; color:#fff;font:bold 13px/30px "Microsoft YaHei","微软雅黑"; display:inline-block; float:left;}
+.goods_title1 .time{ float:right; color:#000;font:12px/30px "Microsoft YaHei","微软雅黑"; padding-right:10px;}
+.goods_title1 .time font{color:#f00;}
+.goods_con{vertical-align: top;font-family:"Verdana","Microsoft YaHei","微软雅黑";min-height:30px; clear:both;}
+.goods_con .goods_label{float: left; height: 30px; line-height: 30px; font-weight: bold; vertical-align: top; color: #444444; }
+.goods_con span{ line-height:30px;font-family:"Verdana","Microsoft YaHei","微软雅黑";color: #444; padding-left:5px;}
+.goods_con ul li{display:inline-block;width:188px; height:162px; margin:10px 10px 0 0;}
+.goods_con .no_img{ background:url(../img/doogs_pic_no.jpg) no-repeat; width:188px; height:162px;overflow:hidden;}
+.goods_con ul li img{ width:178px; height:148px; float:left; margin: 4px 5px;}
+.goods_labeldandu{float: left; height: 30px; line-height: 30px; font-weight: bold; vertical-align: top; color: #444444; }
+.qtyd{ width:950px; height:88px; overflow-y:scroll; border:1px solid #E1E1E1;}
+.qtyd p{ text-indent:2em; font:13px/28px "宋体"; color:#444444; padding:0 10px;}
+
+/*在线洽谈右侧图标*/
+#zxqt{width:60px; position:fixed;right:5%; top:40%; z-index:999px;}
+.ico_buy{width:60px; height:60px; background:url(../img/ico_titi.png)  -27px -98px no-repeat; cursor:pointer;margin:15px auto;}
+.ico_gwc{width:60px; height:60px; background:url(../img/ico_titi.png)  -27px -26px no-repeat;/*top:40%; right:10%;*/ cursor:pointer;margin:15px auto;}
+.jrgwc{width:70px; height:20px; position:fixed; top:30%; right:10%; cursor:pointer; background:#1C6BC7;border:1px #13417A solid;font:12px/20px "宋体"; text-align:center;color:#fff;}
+.lggm{ width:70px; height:20px; position:fixed; top:35%; right:10%; cursor:pointer; background:#1C6BC7;border:1px #13417A solid;font:12px/20px "宋体"; text-align:center;color:#fff;}
+/* 洽谈 */
+.chart0{width:580px; height:auto; position:fixed; top:0; right:13px;z-index:999;overflow:hidden;}
+.chart1{width:560px; height:auto; position:fixed; top:10px; right:10px; background:#f3f3f3; border:6px #d9d9d9 solid; z-index:999; overflow:hidden;clear:both;border-radius:5px;}
+.chart1 .title{height:31px;line-height:31px; background:#ff6a00; padding-left:10px; font-size:13px; font-family:"宋体"; }
+.chart1 .biaodan{padding:5px 10px; clear:both;}
+.chart1 .biaodan table{ width:100%; height:auto; border:0;}
+.chart1 .cart_news{ border:1px solid #abadb3; width:420px; height:70px; padding:5px; line-height:25px; margin:5px auto; clear:both; color:#b2b2b2;}
+.c_htbh{padding:3px 0;vertical-align:top;clear:both;font:12px/28px "宋体";}
+.c_htbh .c_ul_label{float: left; height: 28px; font:12px/28px "宋体";vertical-align: top; color: #000; }
+.c_htbh span{ font:400 20px/28px "微软雅黑"; vertical-align:middle;}
+.chart1 .tit{height:31px; padding-left:10px;font:13px/31px "宋体"; color:#2071C7;}
+.chart1 .con{margin:auto;border:1px #e7e7e7 solid; clear:both; background:#fff;height:296px; overflow-y:scroll; overflow-x:hidden; font-size:12px; word-break:break-all;}
+.chart1 .con .other{width:300px;height:auto; position:relative; background:#F2F7FF; border-radius:4px;padding:5px 5px 5px 25px; border:1px #C9D9E9 solid; left:20px;}
+.chart1 .con .other1{width:300px;height:auto;position:relative; background:#FFFFE5; border-radius:4px;padding:5px 20px; border:1px #FFD0AF solid; right:20px;}
+.chart1 .con .other1 a{ font:13px/20px "宋体"; text-align:right; text-decoration:underline; color:#FF6B01; }
+.chart1 .con .other1 a:hover{ font:13px/20px "宋体"; text-align:right; text-decoration:underline; color:#FF6600;}
+.chart1 .con .botcj{background:#FFEFBF; border-top:1px #ccc solid;margin-top:10px;padding:10px;font:13px/25px "宋体"; position:absolute; bottom:0;}
+.chart1 .con .manage_name{font-size:12px; color:#FF6900; font-family:"宋体"; width:300px; position:absolute;padding-left:300px; left:0;top:-30px; font:12px/30px "宋体";}
+.chart1 .con .manage_name1{font-size:12px; color:#0065CB; font-family:"宋体"; width:270px;padding-left:30px; position:absolute; left:0;top:-30px; font:12px/30px "宋体";}
+.chart1 .con .chart_button{ background:#0066CC/*url(../img/ct_button.jpg) no-repeat*/; width:65px; height:24px; border:0; cursor:pointer; font:12px/24px "宋体"; text-align:center; color:#fff;}
+.chart1 .selest_detail{width:410px; height:auto;  padding:5px 8px; border:1px solid #DDDDDD; background:#FFF; float:left; margin-top:5px;}
+.chart1 .selest_detail .p_choose{ font: bold 13px/30px "宋体"; color:#000;}
+.chart1 .selest_detail .p_choose input{ width:60px; height:24px; border:1px solid #CCCCCC; text-align:center; font: 15px/24px "微软雅黑"; color:#FF7F00; margin:0 5px;}
+.chart1 .selest_detail ul li{ width:200px; height:auto; font:bold 13px/27px "宋体"; float:left; color:#535353;}
+.chart1 .selest_detail ul li input{ vertical-align:text-bottom; margin-right:3px;}

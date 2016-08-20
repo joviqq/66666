@@ -1,0 +1,32 @@
+1.	freepaayManage-core->src/main/resources->generator.xml->修改<table tableName="TB_BAS_SPSX" ></table>
+
+	/freepaayManage-core/pom.xml 中修改
+		<targetMapperPackage>com.freepaay.manage.mapper</targetMapperPackage>
+		<targetModelPackage>com.freepaay.manage.bean</targetModelPackage>
+		<targetResourcesProject>${basedir}/src/main/resources</targetResourcesProject>
+
+2. 	freepaayManage-core->右键pom.xml->Run As->Maven Build...-> 输入命令
+
+	mybatis-generator:generate
+
+3. 	在【freepaayManage-core->src/main/java->com.freepaay.manage.bean】里面加implements Serializable, 写 Sequence，把所有类型都改成String, 除了Date之外
+	
+	把生成的 【freepaayManage-core->src/main/resources->mapper】下的生成的xml文件复制到【freepaayManage-server-provide->src/main/resources->config_mybatis->manage】后删除原来的xml文件
+
+f. 	在【freepaayManage-server-provide->src/main/resources->config_spring->dubbo-provider-list】里写provider的xml, 最好copy后修改
+
+ 	在【freepaayManage->src/main/resources->config_spring->dubbo-consumer-list】里写consumer的xml, 最好copy后修改
+
+5. 	接下来要写service.
+
+	在【freepaayManage-core->src/main/java->com.freepaay.manage.service】里写service interface, 最好copy后修改
+	
+	在【freepaayManage-server-provide->src/main/java->com.freepaay.manage.service.impl】里写serviceimpl实现, 最好copy后修改
+
+6. 	在【freepaayManage->src/main/java->com.freepaay.action】里写action controller, 最好copy后修改
+
+	在【freepaayManage->webapp】里写page, 最好copy后修改
+ 	
+Done!
+
+by 福福 20160606

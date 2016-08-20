@@ -1,0 +1,89 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+
+	<!-- 解决@ResponseBody返回中文乱码的问题，需要加在包扫描前 现在发现一旦启用会使validator失效 <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"> 
+		<property name="messageConverters"> <list> <bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter" 
+		/> <bean class="org.springframework.http.converter.StringHttpMessageConverter"> 
+		<property name="supportedMediaTypes"> <list> <bean class="org.springframework.http.MediaType"> 
+		<constructor-arg index="0" value="text" /> <constructor-arg index="1" value="plain" 
+		/> <constructor-arg index="2" value="UTF-8" /> </bean> </list> </property> 
+		</bean> <bean class="org.springframework.http.converter.xml.SourceHttpMessageConverter" 
+		/> <bean class="org.springframework.http.converter.xml.XmlAwareFormHttpMessageConverter" 
+		/> </list> </property> </bean> -->
+
+	<!-- 解决使用@ResponseBody 的中文乱码。 <bean class="com.freepaay.manage.utils.UTF8StringBeanPostProcessor"></bean> -->
+
+	<!-- 使用基于注解的Controller，指定需要被扫描的包路径，如果有多个可以使用逗号分隔 与<context:annotation-config/>的关系请看：http://www.cnblogs.com/iuranus/archive/2012/07/19/2599084.html -->
+	<context:component-scan base-package="com.freepaay.**.controller" />
+
+	<!-- 启动注解驱动的Spring MVC功能，实现前台数据的映射或操作注解 -->
+	<mvc:annotation-driven />
+	
+	<!-- 采用SpringMVC自带的JSON转换工具，支持@ResponseBody注解 -->
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<bean
+					class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- 避免IE执行AJAX时,返回JSON出现下载文件 -->
+	<bean id="mappingJacksonHttpMessageConverter"
+		class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+		<property name="supportedMediaTypes">
+			<list>
+				<value>text/html;charset=UTF-8</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 对模型视图名称的解析，在请求时模型视图名称添加前后缀 -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/ui/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+
+	<!-- 添加对静态文件的访问 http://www.cnblogs.com/fangqi/archive/2012/10/28/2743108.html -->
+	<mvc:resources location="/resources/images/" mapping="/images/**" />
+	<mvc:resources location="/resources/js/" mapping="/js/**" />
+	<mvc:resources location="/resources/css/" mapping="/css/**" />
+	<mvc:resources location="/resources/resources/dwz/"
+		mapping="/resources/dwz/**" />
+	<mvc:resources location="/resources/plugins/" mapping="/plugins/**" />
+	<mvc:resources location="/upload/" mapping="/upload/**" />
+	<mvc:resources location="/ui/" mapping="/ui/**/**.js" />
+	<mvc:resources location="/favicon.ico" mapping="/favicon.ico" />
+
+	<!--支持文件上传 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="100000" />
+		<property name="maxInMemorySize" value="10240" />
+	</bean>
+	<!-- 总错误处理 http://fancyboy2050.iteye.com/blog/965663 -->
+	<bean id="exceptionResolver"
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="defaultErrorView">
+			<value>/error</value>
+		</property>
+		<property name="defaultStatusCode">
+			<value>500</value>
+		</property>
+		<property name="warnLogCategory">
+			<value>org.springframework.web.servlet.handler.SimpleMappingExceptionResolver
+			</value>
+		</property>
+	</bean>
+</beans>

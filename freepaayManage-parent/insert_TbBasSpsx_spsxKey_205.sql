@@ -1,0 +1,2 @@
+insert into tb_bas_spsx (SPSX_KEY, CODING, RECKON_CODING, SPSX_NAME, DATA_TYPE, DATA_MODE, DISPLAY_ORDER, CHK_TYPE, IS_NULL, MIN_VAL, MAX_VAL, CLUE_INFO, IS_CLU_CHL, PARENT_SPSX_KEY, IS_VALID, REMARK, INPUT_UNIT, INPUT_INFO, CHK_PARAM, ZM, EN, ENSHORT, XSCJ, ZMEN)
+values (205, null, null, 'Al<sub>2</sub>O<sub>3</sub>', 'C', 'A', 6, 'NUM1', 'Y', 0.0000, 16.0000, null, 'N', null, 'Y', null, null, null, null, '品质指标(干基,%)', 'S', null, null, 'Specifications(Dry Basis,%)');

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<!-- <classPathEntry location="d:\mysql-connector-java-5.1.36.jar" /> -->
+	<context id="mysql" defaultModelType="hierarchical"
+		targetRuntime="MyBatis3Simple">
+
+		<property name="autoDelimitKeywords" value="flat" />
+
+		<property name="javaFileEncoding" value="UTF-8" />
+
+		<property name="javaFormatter"
+			value="org.mybatis.generator.api.dom.DefaultJavaFormatter" />
+
+		<property name="beginningDelimiter" value="`" />
+		<property name="endingDelimiter" value="`" />
+
+		<property name="xmlFormatter"
+			value="org.mybatis.generator.api.dom.DefaultXmlFormatter" />
+
+		<plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+			<property name="mappers" value="tk.mybatis.mapper.common.Mapper" />
+		</plugin>
+
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://192.168.99.226:3306/freepaay" userId="root"
+			password="Fff669669669">
+		</jdbcConnection>
+		<!-- 
+		<javaTypeResolver
+			type="org.mybatis.generator.internal.types.JavaTypeResolverDefaultImpl">
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		 -->
+		<javaModelGenerator targetPackage="com.freepaay.manage.bean"
+			targetProject="src/main/java">
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+		</sqlMapGenerator>
+		
+		<javaClientGenerator targetPackage="com.freepaay.manage.mapper"
+			type="XMLMAPPER" targetProject="src/main/java">
+		</javaClientGenerator>
+		
+		<table tableName="TB_ADMIN_DETAILS" />
+	</context>
+</generatorConfiguration>

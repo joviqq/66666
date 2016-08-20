@@ -1,0 +1,22 @@
+Redis的Key值建立规范如下：
+格式1：
+{moduleName}_{QueryClass}_{queryparameter1FieldName}_{parameter1}_{queryparameter2FieldName}_{parameter2} ...
+	moduleName:模块名，一般一个目录就用一个name
+	QueryClass:被查询的类名，基本上就是对应的那张表。
+	queryparameter1FieldName:被查询的字段名称，按驼峰标识，首字母小写。
+	parameter1:查询的字段值
+	如果没有参数可忽略
+格式2：
+{moduleName}_{QueryClassList}_{queryparameter1FieldName}_{parameter1}_{queryparameter2FieldName}_{parameter2} ...
+	moduleName:模块名，一般一个目录就用一个name
+	QueryClassList:被查询的类名+List，表示返回的是QueryClass的列表
+	queryparameter1FieldName:被查询的字段名称，按驼峰标识，首字母小写。
+	parameter1:查询的字段值
+	如果没有参数可忽略
+格式3：
+{moduleName}_{QueryClassVoList}_{queryparameter1FieldName}_{parameter1}_{queryparameter2FieldName}_{parameter2} ...
+	moduleName:模块名，一般一个目录就用一个name
+	QueryClassVoList:被查询的类名+VoList，表示返回的是QueryClass的Vo的列表，
+	queryparameter1FieldName:被查询的字段名称，按驼峰标识，首字母小写。
+	parameter1:查询的字段值
+	如果没有参数可忽略
