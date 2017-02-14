@@ -1,8 +1,0 @@
-1.使用/freepaayManage/manage/list/{conobjKey}/{urlCurrentUserKey}来打开洽谈界面
-{conobjKey}为报盘的报盘号
-{display_words}是:"品名_铁矿"这种格式。如果没有，就写入noname
-{urlCurrentUserKey}是当前用户的CustomerKey
-
-2.打开后，会自动加载历史对话记录。按Ctrl+Enter可以直接开始聊天。
-
-3.使用/freepaayManage/manage/myList来打开洽谈中的我的报盘和我的询盘页面
